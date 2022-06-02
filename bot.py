@@ -16,7 +16,7 @@ import config
 
 
 bot = Bot(config.TOKEN)
-
+URL = "https://painmo.herokuapp.com/"
 dp = Dispatcher(bot)
 
 b1 = KeyboardButton('Помощь')
@@ -75,3 +75,4 @@ async def echo_download_message(message: types.Message):
 
 print("Оно живое !")
 executor.start_polling(dp)
+
