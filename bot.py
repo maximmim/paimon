@@ -9,7 +9,7 @@ import re
 import os
 
 from time import sleep
-from bot import echo
+
 
 import yt_download as yt
 import config 
