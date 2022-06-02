@@ -1,2 +1,5 @@
-token="2056524233:AAFd_ZHoTnhew1LwJ-FmjeRLbC62Yj7lwq4"
+from config import TOKEN
+
+
+TOKEN="2056524233:AAE0lPIJ0WuZ1DeTzP6vbG7cjNWp7UKAsYI"
 download_folder='user_videos'

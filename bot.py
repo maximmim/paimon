@@ -15,8 +15,7 @@ import yt_download as yt
 import config 
 
 
-
-bot = Bot(config.token)
+bot = Bot(config.TOKEN)
 
 dp = Dispatcher(bot)
 
