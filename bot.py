@@ -1,4 +1,4 @@
-from aiogram import Bot, types
+￼from aiogram import Bot, types
 from aiogram.types import ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 import aiogram
 from aiogram.dispatcher import Dispatcher
@@ -32,6 +32,7 @@ async def process_help_command(message: types.Message):
 @dp.message_handler(commands=['start'])
 async def process_help_command(message: types.Message):
     await message.reply("Привіт!\n Я Паймон і допоможу завантажити відео з будь-якого сайту якщо потрібна допомога пиши /help")
+    await message.delete()
 
 @dp.message_handler(commands=['rus'])
 async def process_help_command(message: types.Message):
@@ -45,7 +46,7 @@ async def process_help_command(message: types.Message):
 @dp.message_handler(commands=['help'])
 async def process_help_command(message: types.Message):
     await message.reply("Надішліть мені посилання на відео \n і я допоможу завантажити його")
-
+    await message.delete()
 @dp.message_handler(content_types=['text'])
 async def echo_download_message(message: types.Message):
     if message.text == 'Допомога':
@@ -77,4 +78,3 @@ async def echo_download_message(message: types.Message):
 
 print("Оно живое !")
 executor.start_polling(dp)
-
