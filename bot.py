@@ -25,25 +25,17 @@ b2 = KeyboardButton('Скачять')
 kb_client = ReplyKeyboardMarkup()
 kb_client.add(b1).add(b2)
 
-@dp.message_handler(commands=['s'])
-async def process_help_command(message: types.Message):
-    await message.reply("Вибири мову /rus , /ukr")
-
+   
 @dp.message_handler(commands=['start'])
 async def process_help_command(message: types.Message):
     await message.reply("Привіт!\n Я Паймон і допоможу завантажити відео з будь-якого сайту якщо потрібна допомога пиши /help")
-@dp.message_handler(commands=['rus'])
-async def process_help_command(message: types.Message):
-    await message.reply("Такої мови немає")
-
-@dp.message_handler(commands=['ukr'])
-async def process_help_command(message: types.Message):
-    await message.reply("Ось мова готово")
+    await message.delete()
 
 
 @dp.message_handler(commands=['help'])
 async def process_help_command(message: types.Message):
     await message.reply("Надішліть мені посилання на відео \n і я допоможу завантажити його")
+    await message.delete()
 @dp.message_handler(content_types=['text'])
 async def echo_download_message(message: types.Message):
     if message.text == 'Допомога':
