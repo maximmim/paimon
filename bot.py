@@ -25,11 +25,13 @@ b2 = KeyboardButton('Скачять')
 kb_client = ReplyKeyboardMarkup()
 kb_client.add(b1).add(b2)
 
+@dp.message_handler(commands=['s'])
+async def process_help_command(message: types.Message):
+    await message.reply("Вибири мову /rus , /ukr")
+
 @dp.message_handler(commands=['start'])
 async def process_help_command(message: types.Message):
     await message.reply("Привіт!\n Я Паймон і допоможу завантажити відео з будь-якого сайту якщо потрібна допомога пиши /help")
-    await message.reply("Вибири мову /rus , /ukr")
-
 
 @dp.message_handler(commands=['rus'])
 async def process_help_command(message: types.Message):
