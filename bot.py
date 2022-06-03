@@ -1,4 +1,4 @@
-from aiogram import Bot, types
+￼from aiogram import Bot, types
 from aiogram.types import ReplyKeyboardRemove, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 import aiogram
 from aiogram.dispatcher import Dispatcher
@@ -38,9 +38,10 @@ async def process_help_command(message: types.Message):
     await message.delete()
 @dp.message_handler(content_types=['text'])
 async def echo_download_message(message: types.Message):
-    if message.text == 'Допомога':
+    if message.text == 'help':
             await message.reply("Надішліть мені посилання на відео \n і я допоможу завантажити його")
-
+    elif message.text == 'start':
+            await message.reply("Привіт!\n Я Паймон і допоможу завантажити відео з будь-якого сайту якщо потрібна допомога пиши /help")
     try:
         
         echo_download=yt.Downloader(message.text)
@@ -50,11 +51,11 @@ async def echo_download_message(message: types.Message):
         await message.reply("На жаль, сталася помилка... Перевірте правильність посилання")
         print('Error :(')
         return
-    await message.reply("Готово, видео зкачено на сервер.\nВідправляю...",)
+    await message.reply("Готово, відео завантажено на сервер.\nВідправляю...",)
     try:
         await bot.send_document(message.from_user.id, videonote)
     except:
-        await bot.send_message(message.from_user.id, "На жаль, сталася помилка...")
+        await bot.send_message(message.fr om_user.id, "На жаль, сталася помилка...")
     finally:
         videonote.close()
 
