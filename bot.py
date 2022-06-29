@@ -30,7 +30,7 @@ def random_dw ():
 
 
 
-bot = Bot(token="2056524233:AAHQcvf4M7Y6vSzpVolJgyCkb0dUfQ5kvow")
+bot = Bot(config.TOKEN)
 dp = Dispatcher(bot)
 
 
