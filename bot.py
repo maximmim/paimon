@@ -10,7 +10,6 @@ import os
 
 from time import sleep
 
-from numpy import number
 
 
 import yt_download as yt
@@ -52,7 +51,7 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def commands_start(message: types.message):
-    bot.send_message(config.STARTEXT)
+    await message.reply("Привіт я багато функціональний телеграм бот\n Та звати мене Паймон")
 
 
 @dp.message_handler(content_types=['text'])
